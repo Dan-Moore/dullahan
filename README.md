@@ -1,21 +1,31 @@
-# bun-react-tailwind-shadcn-template
+# shadcn/ui monorepo template
 
-To install dependencies:
+This template is for creating a monorepo with shadcn/ui.
 
-```bash
-bun install
-```
-
-To start a development server:
+## Usage
 
 ```bash
-bun dev
+pnpm dlx shadcn@latest init
 ```
 
-To run for production:
+## Adding components
+
+To add components to your app, run the following command at the root of your `web` app:
 
 ```bash
-bun start
+pnpm dlx shadcn@latest add button -c apps/web
 ```
 
-This project was created using `bun init` in bun v1.2.13. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+This will place the ui components in the `packages/ui/src/components` directory.
+
+## Tailwind
+
+Your `tailwind.config.ts` and `globals.css` are already set up to use the components from the `ui` package.
+
+## Using components
+
+To use the components in your app, import them from the `ui` package.
+
+```tsx
+import { Button } from "@workspace/ui/components/button"
+```
